@@ -36,7 +36,7 @@ also supports ordinal numbers with any additional modes that are applicable for 
 		ss.private_header_files = 'icu4c-static-lib/include/**/*.h'
 		ss.vendored_libraries = 'icu4c-static-lib/lib/**/*.a'
 
-		ss.header_mappings_dir = 'icu4c-static-lib/include'
+#		ss.header_mappings_dir = 'icu4c-static-lib/include'
 		ss.libraries = "c++"
 
 			# The libraries were not merged into a single fat libary, because the total size
