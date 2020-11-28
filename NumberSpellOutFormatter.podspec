@@ -50,7 +50,8 @@ also supports ordinal numbers with any additional modes that are applicable for 
 			'OTHER_LDFLAGS[arch=armv7s]' => arm_ldflags,
 			'OTHER_LDFLAGS[arch=arm64]' => arm_ldflags,
 			'OTHER_LDFLAGS[arch=i386]' => simulator_ldflags,
-			'OTHER_LDFLAGS[arch=x86_64]' => simulator_ldflags
+			'OTHER_LDFLAGS[arch=x86_64]' => simulator_ldflags,
+			'ONLY_ACTIVE_ARCH' => 'YES'
 		}
 	end
 
