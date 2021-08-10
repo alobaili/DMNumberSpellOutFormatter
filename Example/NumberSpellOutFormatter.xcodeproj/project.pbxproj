@@ -21,9 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A956B119A532194BA921037 /* NumberSpellOutFormatter.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = NumberSpellOutFormatter.podspec; path = ../NumberSpellOutFormatter.podspec; sourceTree = "<group>"; };
+		0A956B119A532194BA921037 /* NumberSpellOutFormatter.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = NumberSpellOutFormatter.podspec; path = ../NumberSpellOutFormatter.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2078AD30B4B906CBD22B5805 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		29B12342382A320EBC3730F4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		5FF5100D26BAA21B009517F1 /* icudata.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = icudata.xcframework; path = "Pods/icu4c-iosx/product/frameworks/icudata.xcframework"; sourceTree = "<group>"; };
+		5FF5100E26BAA21B009517F1 /* icui18n.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = icui18n.xcframework; path = "Pods/icu4c-iosx/product/frameworks/icui18n.xcframework"; sourceTree = "<group>"; };
+		5FF5100F26BAA21B009517F1 /* icuio.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = icuio.xcframework; path = "Pods/icu4c-iosx/product/frameworks/icuio.xcframework"; sourceTree = "<group>"; };
+		5FF5101026BAA21B009517F1 /* icuuc.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = icuuc.xcframework; path = "Pods/icu4c-iosx/product/frameworks/icuuc.xcframework"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* NumberSpellOutFormatter_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NumberSpellOutFormatter_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -96,6 +100,10 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5FF5100D26BAA21B009517F1 /* icudata.xcframework */,
+				5FF5100E26BAA21B009517F1 /* icui18n.xcframework */,
+				5FF5100F26BAA21B009517F1 /* icuio.xcframework */,
+				5FF5101026BAA21B009517F1 /* icuuc.xcframework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
@@ -155,7 +163,6 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				05BD426D47AF44B8A8ABBAC5 /* [CP] Embed Pods Frameworks */,
-				F55BD23B4E086D0FD66A3F8D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,7 +184,7 @@
 				ORGANIZATIONNAME = "Dmitry Matyukhin";
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = S392Q3486U;
+						DevelopmentTeam = AVPZGZG26Z;
 					};
 				};
 			};
@@ -186,6 +193,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -220,7 +228,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-NumberSpellOutFormatter_Example/Pods-NumberSpellOutFormatter_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-NumberSpellOutFormatter_Example/Pods-NumberSpellOutFormatter_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/NumberSpellOutFormatter/NumberSpellOutFormatter.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -229,7 +237,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NumberSpellOutFormatter_Example/Pods-NumberSpellOutFormatter_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NumberSpellOutFormatter_Example/Pods-NumberSpellOutFormatter_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		56F448B76A31EDBB42B93EC7 /* [CP] Check Pods Manifest.lock */ = {
@@ -248,21 +256,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F55BD23B4E086D0FD66A3F8D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NumberSpellOutFormatter_Example/Pods-NumberSpellOutFormatter_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -329,6 +322,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -344,7 +338,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -380,6 +374,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -388,7 +383,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -400,11 +395,11 @@
 			baseConfigurationReference = C434234BCF60D84B01394D62 /* Pods-NumberSpellOutFormatter_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = S392Q3486U;
+				DEVELOPMENT_TEAM = AVPZGZG26Z;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NumberSpellOutFormatter/NumberSpellOutFormatter-Prefix.pch";
 				INFOPLIST_FILE = "NumberSpellOutFormatter/NumberSpellOutFormatter-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -417,11 +412,11 @@
 			baseConfigurationReference = C3AEC91B04F30F3DA352C306 /* Pods-NumberSpellOutFormatter_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = S392Q3486U;
+				DEVELOPMENT_TEAM = AVPZGZG26Z;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NumberSpellOutFormatter/NumberSpellOutFormatter-Prefix.pch";
 				INFOPLIST_FILE = "NumberSpellOutFormatter/NumberSpellOutFormatter-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

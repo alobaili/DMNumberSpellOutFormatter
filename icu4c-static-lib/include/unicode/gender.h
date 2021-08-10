@@ -1,4 +1,4 @@
-// Copyright (C) 2016 and later: Unicode, Inc. and others.
+// © 2016 and later: Unicode, Inc. and others.
 // License & terms of use: http://www.unicode.org/copyright.html
 /*
 *******************************************************************************
@@ -18,19 +18,26 @@
 #ifndef _GENDER
 #define _GENDER
 
-#include "unicode/utypes.h"
+/**
+ * \file
+ * \brief C++ API: GenderInfo computes the gender of a list.
+ */
+
+#include "utypes.h"
+
+#if U_SHOW_CPLUSPLUS_API
 
 #if !UCONFIG_NO_FORMATTING
 
-#include "unicode/locid.h"
-#include "unicode/ugender.h"
-#include "unicode/uobject.h"
+#include "locid.h"
+#include "ugender.h"
+#include "uobject.h"
 
 class GenderInfoTest;
 
 U_NAMESPACE_BEGIN
 
-// Forward Declaration
+/** \internal Forward Declaration  */
 void U_CALLCONV GenderInfo_initCache(UErrorCode &status);
 
 /**
@@ -108,6 +115,8 @@ private:
 U_NAMESPACE_END
 
 #endif /* #if !UCONFIG_NO_FORMATTING */
+
+#endif /* U_SHOW_CPLUSPLUS_API */
 
 #endif // _GENDER
 //eof

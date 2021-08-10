@@ -1,4 +1,4 @@
-// Copyright (C) 2016 and later: Unicode, Inc. and others.
+// © 2016 and later: Unicode, Inc. and others.
 // License & terms of use: http://www.unicode.org/copyright.html
 /*
 **********************************************************************
@@ -12,8 +12,11 @@
 #ifndef UNIFUNCT_H
 #define UNIFUNCT_H
 
-#include "unicode/utypes.h"
-#include "unicode/uobject.h"
+#include "utypes.h"
+
+#if U_SHOW_CPLUSPLUS_API
+
+#include "uobject.h"
 
 /**
  * \file 
@@ -123,5 +126,7 @@ protected:
 /*inline UnicodeFunctor::UnicodeFunctor() {}*/
 
 U_NAMESPACE_END
+
+#endif /* U_SHOW_CPLUSPLUS_API */
 
 #endif

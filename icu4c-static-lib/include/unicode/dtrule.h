@@ -1,4 +1,4 @@
-// Copyright (C) 2016 and later: Unicode, Inc. and others.
+// © 2016 and later: Unicode, Inc. and others.
 // License & terms of use: http://www.unicode.org/copyright.html
 /*
 *******************************************************************************
@@ -9,7 +9,9 @@
 #ifndef DTRULE_H
 #define DTRULE_H
 
-#include "unicode/utypes.h"
+#include "utypes.h"
+
+#if U_SHOW_CPLUSPLUS_API
 
 /**
  * \file 
@@ -18,7 +20,7 @@
 
 #if !UCONFIG_NO_FORMATTING
 
-#include "unicode/uobject.h"
+#include "uobject.h"
 
 U_NAMESPACE_BEGIN
 /**
@@ -126,7 +128,7 @@ public:
      * @return    A copy of the object.
      * @stable ICU 3.8
      */
-    DateTimeRule* clone(void) const;
+    DateTimeRule* clone() const;
 
     /**
      * Assignment operator.
@@ -247,6 +249,8 @@ public:
 U_NAMESPACE_END
 
 #endif /* #if !UCONFIG_NO_FORMATTING */
+
+#endif /* U_SHOW_CPLUSPLUS_API */
 
 #endif // DTRULE_H
 //eof

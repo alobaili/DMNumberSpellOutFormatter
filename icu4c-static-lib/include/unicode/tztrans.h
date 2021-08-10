@@ -1,4 +1,4 @@
-// Copyright (C) 2016 and later: Unicode, Inc. and others.
+// © 2016 and later: Unicode, Inc. and others.
 // License & terms of use: http://www.unicode.org/copyright.html
 /*
 *******************************************************************************
@@ -14,11 +14,13 @@
  * \brief C++ API: Time zone transition
  */
 
-#include "unicode/utypes.h"
+#include "utypes.h"
+
+#if U_SHOW_CPLUSPLUS_API
 
 #if !UCONFIG_NO_FORMATTING
 
-#include "unicode/uobject.h"
+#include "uobject.h"
 
 U_NAMESPACE_BEGIN
 
@@ -68,7 +70,7 @@ public:
      * @return  A copy of the object.
      * @stable ICU 3.8
      */
-    TimeZoneTransition* clone(void) const;
+    TimeZoneTransition* clone() const;
 
     /**
      * Assignment operator.
@@ -191,6 +193,8 @@ public:
 U_NAMESPACE_END
 
 #endif /* #if !UCONFIG_NO_FORMATTING */
+
+#endif /* U_SHOW_CPLUSPLUS_API */
 
 #endif // TZTRANS_H
 

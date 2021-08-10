@@ -1,4 +1,4 @@
-// Copyright (C) 2016 and later: Unicode, Inc. and others.
+// © 2016 and later: Unicode, Inc. and others.
 // License & terms of use: http://www.unicode.org/copyright.html
 /*
 ******************************************************************************
@@ -13,7 +13,7 @@
 #ifndef __UREP_H
 #define __UREP_H
 
-#include "unicode/utypes.h"
+#include "utypes.h"
 
 U_CDECL_BEGIN
 

@@ -1,4 +1,4 @@
-// Copyright (C) 2016 and later: Unicode, Inc. and others.
+// © 2016 and later: Unicode, Inc. and others.
 // License & terms of use: http://www.unicode.org/copyright.html
 /*
  *******************************************************************************
@@ -15,15 +15,17 @@
  * \brief C++ API: Region classes (territory containment)
  */
 
-#include "unicode/utypes.h"
-#include "unicode/uregion.h"
+#include "utypes.h"
+
+#if U_SHOW_CPLUSPLUS_API
 
 #if !UCONFIG_NO_FORMATTING
 
-#include "unicode/uobject.h"
-#include "unicode/uniset.h"
-#include "unicode/unistr.h"
-#include "unicode/strenum.h"
+#include "uregion.h"
+#include "uobject.h"
+#include "uniset.h"
+#include "unistr.h"
+#include "strenum.h"
 
 U_NAMESPACE_BEGIN
 
@@ -192,7 +194,7 @@ private:
     char id[4];
     UnicodeString idStr;
     int32_t code;
-    URegionType type;
+    URegionType fType;
     Region *containingRegion;
     UVector *containedRegions;
     UVector *preferredValues;
@@ -219,6 +221,9 @@ private:
 U_NAMESPACE_END
 
 #endif /* #if !UCONFIG_NO_FORMATTING */
+
+#endif /* U_SHOW_CPLUSPLUS_API */
+
 #endif // REGION_H
 
 //eof

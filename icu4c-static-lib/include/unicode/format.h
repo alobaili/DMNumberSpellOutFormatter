@@ -1,4 +1,4 @@
-// Copyright (C) 2016 and later: Unicode, Inc. and others.
+// © 2016 and later: Unicode, Inc. and others.
 // License & terms of use: http://www.unicode.org/copyright.html
 /*
 ********************************************************************************
@@ -24,7 +24,9 @@
 #define FORMAT_H
 
 
-#include "unicode/utypes.h"
+#include "utypes.h"
+
+#if U_SHOW_CPLUSPLUS_API
 
 /**
  * \file 
@@ -33,13 +35,13 @@
 
 #if !UCONFIG_NO_FORMATTING
 
-#include "unicode/unistr.h"
-#include "unicode/fmtable.h"
-#include "unicode/fieldpos.h"
-#include "unicode/fpositer.h"
-#include "unicode/parsepos.h"
-#include "unicode/parseerr.h" 
-#include "unicode/locid.h"
+#include "unistr.h"
+#include "fmtable.h"
+#include "fieldpos.h"
+#include "fpositer.h"
+#include "parsepos.h"
+#include "parseerr.h" 
+#include "locid.h"
 
 U_NAMESPACE_BEGIN
 
@@ -302,6 +304,8 @@ protected:
 U_NAMESPACE_END
 
 #endif /* #if !UCONFIG_NO_FORMATTING */
+
+#endif /* U_SHOW_CPLUSPLUS_API */
 
 #endif // _FORMAT
 //eof

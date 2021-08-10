@@ -1,4 +1,4 @@
-// Copyright (C) 2016 and later: Unicode, Inc. and others.
+// © 2016 and later: Unicode, Inc. and others.
 // License & terms of use: http://www.unicode.org/copyright.html
 /*
 *******************************************************************************
@@ -9,7 +9,9 @@
 #ifndef RBTZ_H
 #define RBTZ_H
 
-#include "unicode/utypes.h"
+#include "utypes.h"
+
+#if U_SHOW_CPLUSPLUS_API
 
 /**
  * \file 
@@ -18,8 +20,8 @@
 
 #if !UCONFIG_NO_FORMATTING
 
-#include "unicode/basictz.h"
-#include "unicode/unistr.h"
+#include "basictz.h"
+#include "unistr.h"
 
 U_NAMESPACE_BEGIN
 
@@ -105,7 +107,7 @@ public:
 
     /**
      * Makes the <code>TimeZoneRule</code> ready to handle actual timezone
-     * calcuation APIs.  This method collects time zone rules specified
+     * calculation APIs.  This method collects time zone rules specified
      * by the caller via the constructor and addTransitionRule() and
      * builds internal structure for making the object ready to support
      * time zone APIs such as getOffset(), getNextTransition() and others.
@@ -121,7 +123,7 @@ public:
      * @return   A new copy of this TimeZone object.
      * @stable ICU 3.8
      */
-    virtual TimeZone* clone(void) const;
+    virtual RuleBasedTimeZone* clone() const;
 
     /**
      * Returns the TimeZone's adjusted GMT offset (i.e., the number of milliseconds to add
@@ -224,6 +226,7 @@ public:
      */
     virtual UBool useDaylightTime(void) const;
 
+#ifndef U_FORCE_HIDE_DEPRECATED_API
     /**
      * Queries if the given date is in daylight savings time in
      * this time zone.
@@ -238,6 +241,7 @@ public:
      * @deprecated ICU 2.4. Use Calendar::inDaylightTime() instead.
      */
     virtual UBool inDaylightTime(UDate date, UErrorCode& status) const;
+#endif  // U_FORCE_HIDE_DEPRECATED_API
 
     /**
      * Returns true if this zone has the same rule and offset as another zone.
@@ -254,7 +258,7 @@ public:
      * @param base      The base time.
      * @param inclusive Whether the base time is inclusive or not.
      * @param result    Receives the first transition after the base time.
-     * @return  TRUE if the transition is found.
+     * @return  true if the transition is found.
      * @stable ICU 3.8
      */
     virtual UBool getNextTransition(UDate base, UBool inclusive, TimeZoneTransition& result) const;
@@ -264,7 +268,7 @@ public:
      * @param base      The base time.
      * @param inclusive Whether the base time is inclusive or not.
      * @param result    Receives the most recent transition before the base time.
-     * @return  TRUE if the transition is found.
+     * @return  true if the transition is found.
      * @stable ICU 3.8
      */
     virtual UBool getPreviousTransition(UDate base, UBool inclusive, TimeZoneTransition& result) const;
@@ -298,12 +302,16 @@ public:
     virtual void getTimeZoneRules(const InitialTimeZoneRule*& initial,
         const TimeZoneRule* trsrules[], int32_t& trscount, UErrorCode& status) const;
 
+#ifndef U_FORCE_HIDE_DRAFT_API
     /**
      * Get time zone offsets from local wall time.
-     * @internal
+     * @draft ICU 69
      */
-    virtual void getOffsetFromLocal(UDate date, int32_t nonExistingTimeOpt, int32_t duplicatedTimeOpt,
+    virtual void getOffsetFromLocal(
+        UDate date, UTimeZoneLocalOption nonExistingTimeOpt,
+        UTimeZoneLocalOption duplicatedTimeOpt,
         int32_t& rawOffset, int32_t& dstOffset, UErrorCode& status) const;
+#endif /* U_FORCE_HIDE_DRAFT_API */
 
 private:
     void deleteRules(void);
@@ -358,6 +366,8 @@ public:
 U_NAMESPACE_END
 
 #endif /* #if !UCONFIG_NO_FORMATTING */
+
+#endif /* U_SHOW_CPLUSPLUS_API */
 
 #endif // RBTZ_H
 
