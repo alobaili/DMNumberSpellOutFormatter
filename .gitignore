@@ -34,3 +34,4 @@ Carthage
 Example/Pods/
 _Pods.xcodeproj
 /Example/NumberSpellOutFormatter.xcworkspace/xcshareddata
+/.build
